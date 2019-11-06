@@ -12,7 +12,7 @@ public class Mappa
     ArrayList uso;
     public Mappa()
     {
-        water=new int [8][8];
+        water=new int[8][8];
         conta= 0 ;
         uso=new ArrayList();
     }
@@ -43,10 +43,28 @@ public class Mappa
         }
         return false;
     }
-    public void inserimento_b(int c1,int c2)
+    public boolean inserimento2(int c1,int c2, String d)
     {
-        if(c1<8&&c2<8)
+        if(c1 < 8 && c2 < 8 && c1 >= 0 && c2 >= 0)
         {
+         if (d.equalsIgnoreCase("orizzontale")){
+            if(water[c1][c2]==0 && water[c1+1][c2]==0 && water[c1-1][c2+1]!= 1 && water[c1-1][c2]!= 1 && water[c1-1][c2-1]!= 1 && water[c1][c2+1]!= 1 && water[c1][c2-1]!= 1 && water[c1+1][c2+1]!= 1 && water[c1+1][c2-1]!= 1 && water[c1+2][c2+1]!= 1 && water[c1+2][c2]!= 1 && water[c1+2][c2-1]!= 1){
+              water[c1][c2]=1;
+              return true;
+            }else{return false;}
+         }else if (d.equalsIgnoreCase("verticale")){
+         if(water[c1][c2+1]==0){
+              water[c1][c2]=1;
+              return true;
+            }else{return false;}
+        }
+    }
+    }
+    public void inserimento3(int c1,int c2, char d)
+    {
+        if(c1 < 8 && c2 < 8 && c1 >= 0 && c2 >= 0)
+        {
+         if ()       
             water[c1][c2]=1;
         }
     }

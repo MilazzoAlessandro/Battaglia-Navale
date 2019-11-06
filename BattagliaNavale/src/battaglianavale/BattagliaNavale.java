@@ -15,7 +15,20 @@ public class BattagliaNavale {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Mappa Map1 = new Mappa(); 
+        Mappa Map2 = new Mappa();
+        Map2.inizioWater();
+        Map1.inizioWater();
+        int c1,c2;
+        }
+        /*Inserire per giocatore 1*/
+        System.out.println("inserire barca da 2");
+        Map1.inserimento2(c1,c2);
+        System.out.println("inserire barca da 2");
+        Map1.inserimento2(c1,c2);
+        System.out.println("inserire barca da 3");
+        Map1.inserimento3(c1,c2);
+        
     }
     
 }

@@ -10,5 +10,20 @@ package battaglianavale;
  * @author informatica
  */
 public class Barca {
-    
+   int posti;
+
+    public Barca() {
+    }
+
+    public Barca(int posti, int CordX, int CordY) {
+        this.posti = posti;
+    }
+
+    public int getPosti() {
+        return posti;
+    }
+
+    public void setPosti(int posti) {
+        this.posti = posti;
+    }
 }
