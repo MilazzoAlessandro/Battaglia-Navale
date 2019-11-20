@@ -22,21 +22,24 @@ public class BattagliaNavale {
         Scanner scan = new Scanner(System.in);
 
         /*Inserire per giocatore 1*/
-        System.out.println("inserire barca da 2");
-        c1 = scan.nextInt();
-        c2 = scan.nextInt();
-        d = scan.next();
-        Map1.inserimento2(c1, c2, d);
-        System.out.println("inserire barca da 2");
-        c1 = scan.nextInt();
-        c2 = scan.nextInt();
-        d = scan.next();
-        Map1.inserimento2(c1, c2, d);
-        System.out.println("inserire barca da 3");
-        c1 = scan.nextInt();
-        c2 = scan.nextInt();
-        d = scan.next();
-        Map1.inserimento3(c1, c2, d);
+        do{
+            System.out.println("inserire barca da 2");
+            c1 = scan.nextInt();
+            c2 = scan.nextInt();
+            d = scan.next();
+        }while( Map1.inserimento2(c1, c2, d)==false);
+        do{
+            System.out.println("inserire barca da 2");
+            c1 = scan.nextInt();
+            c2 = scan.nextInt();
+            d = scan.next();
+        }while( Map1.inserimento2(c1, c2, d)==false);
+        do{
+            System.out.println("inserire barca da 3");
+            c1 = scan.nextInt();
+            c2 = scan.nextInt();
+            d = scan.next();
+        }while( Map1.inserimento3(c1, c2, d)==false);
 
     }
 

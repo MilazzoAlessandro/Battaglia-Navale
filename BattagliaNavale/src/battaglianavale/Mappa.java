@@ -37,6 +37,7 @@ public class Mappa {
 
             }
         }
+         System.out.println("colpire una cella disponibile \n");
         return false;
     }
 
@@ -53,6 +54,7 @@ public class Mappa {
                     water[c1 + 1][c2] = 1;
                     return true;
                 } else {
+                     System.out.println("inserire la barca in una cella disponibile \n");
                     return false;
                 }
             } else if (d.equalsIgnoreCase("verticale")) {
@@ -66,6 +68,7 @@ public class Mappa {
                     water[c1][c2 + 1] = 1;
                     return true;
                 } else {
+                     System.out.println("inserire la barca in una cella disponibile \n");
                     return false;
                 }
             } else {
@@ -73,6 +76,7 @@ public class Mappa {
                 return false;
             }
         } else {
+             System.out.println("inserire la barca in una cella disponibile \n");
             return false;
         }
     }
@@ -92,6 +96,7 @@ public class Mappa {
                     water[c1 + 2][c2] = 1;
                     return true;
                 } else {
+                     System.out.println("inserire la barca in una cella disponibile \n");
                     return false;
                 }
             } else if (d.equalsIgnoreCase("verticale")) {
@@ -108,6 +113,7 @@ public class Mappa {
                     water[c1 + 2][c2] = 1;
                     return true;
                 } else {
+                     System.out.println("inserire la barca in una cella disponibile \n");
                     return false;
                 }
             } else {
@@ -117,6 +123,7 @@ public class Mappa {
         } else {
             return false;
         }
+        
     }
     
     
