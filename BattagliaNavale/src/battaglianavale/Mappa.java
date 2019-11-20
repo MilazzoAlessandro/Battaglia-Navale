@@ -26,18 +26,32 @@ public class Mappa {
     }
 
     public boolean colpo(int c1, int c2) {
-        for (int x = 0; x < 8; x++) {
-            for (int y = 0; y < 8; y++) {
-                if (c1 == x && c2 == y) {
-                    if (this.water[x][y] == 1) {
-                        this.water[x][y] = 2;
-                        return true;
-                    }
+        if(c1 < 8 && c2 < 8 && c1 > 0 && c2 > 0)
+        {
+            if (this.water[c1][c2] == 1) 
+            {
+                this.water[c1][c2] = 2; 
+                
+                if((this.water[c1+1][c2] == 2 && this.water[c1-1][c2] == 2) || (this.water[c1+1][c2] == 2 && this.water[c1+2][c2] == 2) || (this.water[c1-1][c2] == 2 && this.water[c1-2][c2] == 2))
+                {
+                    System.out.println("Nave affonata");
                 }
-
+                else if((this.water[c1+1][c2] == 2 && this.water[c1-1][c2] == 0 && this.water[c1+2][c2] == 0) || (this.water[c1+1][c2] == 0 && this.water[c1-1][c2] == 2 && this.water[c1-2][c2] == 0))
+                {
+                    System.out.println("Nave affonata");
+                }
+                else if((this.water[c1][c2+1] == 2 && this.water[c1][c2-1] == 2) || (this.water[c1][c2+1] == 2 && this.water[c1][c2+2] == 2) || (this.water[c1][c2-1] == 2 && this.water[c1][c2-2] == 2))
+                {
+                    System.out.println("Nave affonata");
+                }
+                else if((this.water[c1][c2+1] == 2 && this.water[c1][c2-1] == 0 && this.water[c1][c2+2] == 0) || (this.water[c1][c2+1] == 0 && this.water[c1][c2-1] == 2 && this.water[c1][c2-2] == 0))
+                {
+                    System.out.println("Nave affonata");
+                }
+                return true;
             }
         }
-         System.out.println("colpire una cella disponibile \n");
+        System.out.println("colpire una cella disponibile \n");
         return false;
     }
 
