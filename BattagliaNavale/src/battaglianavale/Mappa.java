@@ -18,9 +18,11 @@ public class Mappa {
     }
 
     public void inizioWater() {
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                water[i][j] = 0;
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                if(j==0 || j==10 || i==0 || i==10){
+                    water[i][j]=3;
+            }else{ water[i][j] = 0;}
             }
         }
     }
@@ -42,7 +44,7 @@ public class Mappa {
     }
 
     public boolean inserimento2(int c1, int c2, String d) {
-        if (c1 < 8 && c2 < 8 && c1 >= 0 && c2 >= 0) {
+        if (c1 <= 8 && c2 < 8 && c1 >= 1 && c2 >= 1) {
             if (d.equalsIgnoreCase("orizzontale")) {
                 if (water[c1][c2] == 0 && water[c1 + 1][c2] == 0 && water[c1 - 1][c2 + 1] != 1
                         && water[c1 - 1][c2] != 1 && water[c1 - 1][c2 - 1] != 1
@@ -82,7 +84,7 @@ public class Mappa {
     }
     
     public boolean inserimento3(int c1, int c2, String d) {
-        if (c1 < 8 && c2 < 8 && c1 >= 0 && c2 >= 0) {
+        if (c1 <= 8 && c2 <= 8 && c1 >= 1 && c2 >= 1) {
             if (d.equalsIgnoreCase("orizzontale")) {
                 if (water[c1][c2] == 0 && water[c1 + 1][c2] == 0 && water[c1 - 1][c2 + 1] != 1
                         && water[c1 - 1][c2] != 1 && water[c1 - 1][c2 - 1] != 1
