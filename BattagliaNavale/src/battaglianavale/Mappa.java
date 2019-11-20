@@ -1,6 +1,6 @@
 package battaglianavale;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 //0=vuoto
 //1=barca
 //2=colpito
@@ -9,12 +9,12 @@ public class Mappa {
 
     int[][] water;
     int conta;
-    ArrayList uso;
+    //ArrayList uso;
 
     public Mappa() {
         water = new int[8][8];
         conta = 0;
-        uso = new ArrayList();
+        //uso = new ArrayList();
     }
 
     public void inizioWater() {
@@ -118,4 +118,9 @@ public class Mappa {
             return false;
         }
     }
+    
+    
+    
+    
+    
 }
