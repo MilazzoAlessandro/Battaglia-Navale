@@ -17,6 +17,7 @@ public class BattagliaNavale {
         Map2.inizioWater();
         Map1.inizioWater();
         int c1, c2;
+        Boolean win;
         String d;
 
         Scanner scan = new Scanner(System.in);
@@ -40,6 +41,15 @@ public class BattagliaNavale {
             c2 = scan.nextInt();
             d = scan.next();
         } while (Map1.inserimento3(c1, c2, d) == false);
+        
+        win = false;
+        do{
+            System.out.println("inserire le coordinate a cui colpire");
+            c1 = scan.nextInt();
+            c2 = scan.nextInt();
+            Map1.colpo(c1,c2);
+            win = Map1.victory();
+        }while(win == false);
 
     }
 

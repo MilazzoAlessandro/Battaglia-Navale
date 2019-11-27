@@ -1,9 +1,10 @@
 package battaglianavale;
 
 //import java.util.ArrayList;
-//0=vuoto
-//1=barca
-//2=colpito
+//0 vuoto
+//1 barca
+//2 colpito
+//3 bordi
 public class Mappa {
 
     int[][] water;
@@ -33,18 +34,35 @@ public class Mappa {
             if (this.water[c1][c2] == 1) {
                 this.water[c1][c2] = 2;
 
-                if ((this.water[c1 + 1][c2] == 2 && this.water[c1 - 1][c2] == 2) || (this.water[c1 + 1][c2] == 2 && this.water[c1 + 2][c2] == 2) || (this.water[c1 - 1][c2] == 2 && this.water[c1 - 2][c2] == 2)) {
+                if ((this.water[c1 + 1][c2] == 2 && this.water[c1 - 1][c2] == 2)
+                        || (this.water[c1 + 1][c2] == 2 && this.water[c1 + 2][c2] == 2)
+                        || (this.water[c1 - 1][c2] == 2 && this.water[c1 - 2][c2] == 2)) {
+
                     System.out.println("Nave affonata");
-                } else if ((this.water[c1 + 1][c2] == 2 && this.water[c1 - 1][c2] == 0 && this.water[c1 + 2][c2] == 0) || (this.water[c1 + 1][c2] == 0 && this.water[c1 - 1][c2] == 2 && this.water[c1 - 2][c2] == 0)) {
+
+                } else if ((this.water[c1 + 1][c2] == 2 && this.water[c1 - 1][c2] == 0 
+                            && this.water[c1 + 2][c2] == 0) || (this.water[c1 + 1][c2] == 0 
+                            && this.water[c1 - 1][c2] == 2 && this.water[c1 - 2][c2] == 0)) {
+                    
                     System.out.println("Nave affonata");
-                } else if ((this.water[c1][c2 + 1] == 2 && this.water[c1][c2 - 1] == 2) || (this.water[c1][c2 + 1] == 2 && this.water[c1][c2 + 2] == 2) || (this.water[c1][c2 - 1] == 2 && this.water[c1][c2 - 2] == 2)) {
+                    
+                } else if ( (this.water[c1][c2 + 1] == 2 && this.water[c1][c2 - 1] == 2) || 
+                            (this.water[c1][c2 + 1] == 2 && this.water[c1][c2 + 2] == 2) || 
+                            (this.water[c1][c2 - 1] == 2 && this.water[c1][c2 - 2] == 2)) {
+                    
                     System.out.println("Nave affonata");
-                } else if ((this.water[c1][c2 + 1] == 2 && this.water[c1][c2 - 1] == 0 && this.water[c1][c2 + 2] == 0) || (this.water[c1][c2 + 1] == 0 && this.water[c1][c2 - 1] == 2 && this.water[c1][c2 - 2] == 0)) {
+                    
+                } else if ((this.water[c1][c2 + 1] == 2 && this.water[c1][c2 - 1] == 0 &&
+                            this.water[c1][c2 + 2] == 0) || (this.water[c1][c2 + 1] == 0 && 
+                            this.water[c1][c2 - 1] == 2 && this.water[c1][c2 - 2] == 0)) {
+                    
                     System.out.println("Nave affonata");
+                
                 }
                 return true;
             }
         }
+
         System.out.println("colpire una cella disponibile \n");
         return false;
     }
@@ -143,11 +161,11 @@ public class Mappa {
     }
 
     public boolean victory() {
-        boolean Vi = false;
+        boolean Vi = true;
         for (int i = 1; i < 9; i++) {
             for (int j = 1; j < 9; j++) {
                 if (this.water[i][j] == 1) {
-                    Vi = true;
+                    Vi = false;
                 }
             }
 
